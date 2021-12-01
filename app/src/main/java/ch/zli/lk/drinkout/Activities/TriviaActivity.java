@@ -1,14 +1,16 @@
-package ch.zli.lk.drinkout;
+package ch.zli.lk.drinkout.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import ch.zli.lk.drinkout.R;
+
+public class TriviaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_trivia);
     }
 }

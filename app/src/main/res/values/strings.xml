@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">DrinkOut</string>
     <string name="bomb_game">Defuse the Bomb</string>
+    <string name="trivia_game">Trivia run</string>
+    <string name="welcome">Welcome to Drink Out</string>
+    <string name="trivia">Trivia Run</string>
+    <string name="bomb">Defuse the Bomb</string>
+    <string name="defused">The Bomb was Successfully Defused! Congrats!</string>
+    <string name="exploded">The Bomb exploded in your Hands... more luck next time!</string>
+    <string name="backToOverview">Back to Overview</string>
+    <string name="bomb_description">Klick the Bomb alternately to start the Game. Player One begins.</string>
+    <string name="bomb_win">the Bomb does not explode on your Click, or if de bomb was defused.</string>
+    <string name="bomb_lose">the Bomb explodes on your click.</string>
+    <string name="bomb_loset">You LOSE if:</string>
+    <string name="bomb_wint">You WIN if:</string>
+
+
 </resources>
