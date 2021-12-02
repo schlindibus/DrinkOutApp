@@ -105,10 +105,10 @@
                 tools:visibility="visible">
 
                 <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:id="@+id/imageView5"
+                    android:layout_width="97dp"
+                    android:layout_height="162dp"
+                    app:srcCompat="@drawable/_754225" />
 
                 <TextView
                     android:id="@+id/textView13"
@@ -123,11 +123,10 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:srcCompat="@tools:sample/avatars"
-                    android:contentDescription="TODO" />
+                    android:id="@+id/imageView4"
+                    android:layout_width="92dp"
+                    android:layout_height="162dp"
+                    app:srcCompat="@drawable/_754225" />
 
                 <TextView
                     android:id="@+id/textView11"
