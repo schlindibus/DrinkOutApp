@@ -47,6 +47,7 @@
             android:id="@+id/triviaStart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#7030A0 "
             android:text="@string/triviaStart" />
     </LinearLayout>
 
@@ -146,6 +147,7 @@
             android:id="@+id/save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#7030A0 "
             android:text="@string/save" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,4 +18,6 @@
     <string name="save">Save Questions</string>
     <string name="triviaCongratulations">Congratulations, you\'ve Scored</string>
     <string name="triviaCongratulationsPt2">Points</string>
+    <string name="playerOne">Player1</string>
+    <string name="playerTwo">Player2</string>
 </resources>
