@@ -13,6 +13,7 @@ import android.os.IBinder;
 import android.util.Log;
 import android.util.LogPrinter;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -56,8 +57,10 @@ public class BombActivity extends AppCompatActivity {
                     int rndmTime = ThreadLocalRandom.current().nextInt(min, max + 1);
                     end = start + (rndmTime * 1000);
                 }
+                myCounter++;
                 if (System.currentTimeMillis() > end) {
                     bombState = myService.defuseBomb(myCounter);
+
                     if (bombState == BombService.bombState.Defused.name()) {
                         Intent defusedActivity = new Intent(getApplicationContext(), DefusedAcivity.class);
                         startActivity(defusedActivity);
@@ -67,7 +70,6 @@ public class BombActivity extends AppCompatActivity {
                         myService.vibrate(getApplicationContext(), 2000);
                     }
                 }
-                myCounter++;
             });
         }
 
