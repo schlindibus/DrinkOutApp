@@ -17,6 +17,14 @@ public class TriviaService extends Service {
             "Ist die Erde rund?",
             "Wie viel Bier ist zu viel Bier?"
     };
+    String[] answers = new String [] {
+            "4",
+            "vier",
+            "paris",
+            "ja",
+            "gibt es nicht"
+    };
+    int finalPoints = 0;
 
     private final IBinder ibinder = new TriviaService.LocalBinder();
 

@@ -1,5 +1,7 @@
 package ch.zli.lk.drinkout.Activities;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -7,31 +9,51 @@ import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
+import java.util.Arrays;
 
 import ch.zli.lk.drinkout.R;
 import ch.zli.lk.drinkout.Services.TriviaService;
 
 public class TriviaEndActivity extends AppCompatActivity {
-    TriviaService myService;
-    SharedPreferences prefs;
-    private static final String COUNT_STATE = "";
 
+    TriviaService myService;
+    String a1, a2, a3, a4;
+    String[] answers = new String [] {
+            "4",
+            "vier",
+            "paris",
+            "ja",
+            "gibt es nicht"
+    };
+    int finalPoints = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trivia);
+        setContentView(R.layout.activity_trivia_end);
         Bundle bundle = getIntent().getExtras();
-        prefs = getSharedPreferences(COUNT_STATE, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
+        a1 = (String) bundle.get("a1").toString().toLowerCase();
+        a2 = (String) bundle.get("a2").toString().toLowerCase();
+        a3 = (String) bundle.get("a3").toString().toLowerCase();
+        a4 = (String) bundle.get("a4").toString().toLowerCase();
 
+        if (Arrays.asList(answers).contains(a1)) {
+            finalPoints++;
+        }
+        if (Arrays.asList(answers).contains(a2)) {
+            finalPoints++;
+        }
+        if (Arrays.asList(answers).contains(a3)) {
+            finalPoints++;
+        }
+        if (Arrays.asList(answers).contains(a4)) {
+            finalPoints++;
+        }
 
+        TextView finalScore = findViewById(R.id.points);
+        finalScore.setText("" + finalPoints);
     }
 
     private final ServiceConnection connection = new ServiceConnection() {
@@ -40,8 +62,6 @@ public class TriviaEndActivity extends AppCompatActivity {
         public void onServiceConnected(ComponentName name, IBinder service) {
             TriviaService.LocalBinder binder = (TriviaService.LocalBinder) service;
             myService = binder.getService();
-
-
         }
 
         @Override

@@ -11,8 +11,11 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.google.android.material.textfield.TextInputEditText;
 
 import ch.zli.lk.drinkout.R;
 import ch.zli.lk.drinkout.Services.TriviaService;
@@ -20,8 +23,7 @@ import ch.zli.lk.drinkout.Services.TriviaService;
 public class TriviaActivity extends AppCompatActivity {
     TriviaService myService;
     SharedPreferences prefs;
-    Long finalTime;
-    Long start;
+    EditText a1, a2, a3, a4;
     private static final String COUNT_STATE = "";
 
 
@@ -32,6 +34,7 @@ public class TriviaActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         prefs = getSharedPreferences(COUNT_STATE, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
+
 
 
     }
@@ -54,6 +57,11 @@ public class TriviaActivity extends AppCompatActivity {
             TextView q3 = findViewById(R.id.q3);
             TextView q4 = findViewById(R.id.q4);
 
+            a1 = findViewById(R.id.a1);
+            a2 = findViewById(R.id.a2);
+            a3 = findViewById(R.id.a3);
+            a4 = findViewById(R.id.a4);
+
             questions.setVisibility(View.GONE);
             save.setVisibility(View.GONE);
 
@@ -66,6 +74,15 @@ public class TriviaActivity extends AppCompatActivity {
                 q2.setText(myService.setQuestion(1));
                 q3.setText(myService.setQuestion(2));
                 q4.setText(myService.setQuestion(3));
+            });
+            saveqs.setOnClickListener(c -> {
+                Intent endIntent = new Intent(getApplicationContext(), TriviaEndActivity.class);
+
+                endIntent.putExtra("a1", a1.getText().toString());
+                endIntent.putExtra("a2", a2.getText().toString());
+                endIntent.putExtra("a3", a3.getText().toString());
+                endIntent.putExtra("a4", a4.getText().toString());
+                startActivity(endIntent);
             });
 
         }
