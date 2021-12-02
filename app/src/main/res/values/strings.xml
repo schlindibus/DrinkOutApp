@@ -13,6 +13,9 @@
     <string name="bomb_lose">the Bomb explodes on your click.</string>
     <string name="bomb_loset">You LOSE if:</string>
     <string name="bomb_wint">You WIN if:</string>
-
-
+    <string name="trivia_intro">Answer all Questions as Fast as you can! Good Luck.</string>
+    <string name="triviaStart">Start the Trivia</string>
+    <string name="save">Save Questions</string>
+    <string name="triviaCongratulations">Congratulations, you\'ve Scored</string>
+    <string name="triviaCongratulationsPt2">Points</string>
 </resources>

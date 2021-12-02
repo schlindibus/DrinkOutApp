@@ -11,9 +11,6 @@ import android.os.Vibrator;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class BombService extends Service {
-    boolean timeIsActive = false;
-    int lenght;
-
     public enum bombState {
         Expolded,
         Defused

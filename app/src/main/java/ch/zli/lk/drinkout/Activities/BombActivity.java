@@ -35,12 +35,8 @@ public class BombActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bomb);
         Bundle bundle = getIntent().getExtras();
-
         prefs = getSharedPreferences(COUNT_STATE, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
-
-
-
     }
 
     private final ServiceConnection connection = new ServiceConnection() {
@@ -60,7 +56,6 @@ public class BombActivity extends AppCompatActivity {
                     int rndmTime = ThreadLocalRandom.current().nextInt(min, max + 1);
                     end = start + (rndmTime * 1000);
                 }
-                myCounter++;
                 if (System.currentTimeMillis() > end) {
                     bombState = myService.defuseBomb(myCounter);
                     if (bombState == BombService.bombState.Defused.name()) {
@@ -72,8 +67,8 @@ public class BombActivity extends AppCompatActivity {
                         myService.vibrate(getApplicationContext(), 2000);
                     }
                 }
+                myCounter++;
             });
-
         }
 
         @Override
@@ -93,6 +88,5 @@ public class BombActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         unbindService(connection);
-
     }
 }

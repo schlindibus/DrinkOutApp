@@ -1,7 +1,5 @@
 package ch.zli.lk.drinkout.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -14,14 +12,14 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import ch.zli.lk.drinkout.R;
 import ch.zli.lk.drinkout.Services.TriviaService;
 
-public class TriviaActivity extends AppCompatActivity {
+public class TriviaEndActivity extends AppCompatActivity {
     TriviaService myService;
     SharedPreferences prefs;
-    Long finalTime;
-    Long start;
     private static final String COUNT_STATE = "";
 
 
@@ -43,30 +41,6 @@ public class TriviaActivity extends AppCompatActivity {
             TriviaService.LocalBinder binder = (TriviaService.LocalBinder) service;
             myService = binder.getService();
 
-            Button startBtn = findViewById(R.id.triviaStart);
-            LinearLayout infos = findViewById(R.id.infos);
-            LinearLayout questions = findViewById(R.id.questions);
-            LinearLayout save = findViewById(R.id.saveQuestions);
-            Button saveqs = findViewById(R.id.save);
-
-            TextView q1 = findViewById(R.id.q1);
-            TextView q2 = findViewById(R.id.q2);
-            TextView q3 = findViewById(R.id.q3);
-            TextView q4 = findViewById(R.id.q4);
-
-            questions.setVisibility(View.GONE);
-            save.setVisibility(View.GONE);
-
-            startBtn.setOnClickListener(e -> {
-                infos.setVisibility(View.GONE);
-                questions.setVisibility(View.VISIBLE);
-                save.setVisibility(View.VISIBLE);
-
-                q1.setText(myService.setQuestion(0));
-                q2.setText(myService.setQuestion(1));
-                q3.setText(myService.setQuestion(2));
-                q4.setText(myService.setQuestion(3));
-            });
 
         }
 
